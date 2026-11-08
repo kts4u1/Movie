@@ -1,0 +1,27 @@
+{
+  "name": "spirit-clash",
+  "version": "1.0.0",
+  "description": "15-second procedural 3D fight cinematic rendered with three.js in headless Chromium",
+  "scripts": {
+    "events": "node tools/render.mjs --times 0 --out frames/_tmp --w 320 --h 136 --info audio/events.json",
+    "audio": "python3 audio/soundtrack.py",
+    "frames": "node tools/render.mjs --frames 0-449 --out frames --workers 2",
+    "encode": "bash tools/encode.sh",
+    "build": "npm run events && npm run audio && npm run frames && npm run encode"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kts4u1/Movie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kts4u1/Movie/issues"
+  },
+  "homepage": "https://github.com/kts4u1/Movie#readme",
+  "dependencies": {
+    "three": "^0.187.0"
+  },
+  "type": "commonjs"
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Spirit Clash</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #000; overflow: hidden; }
+  canvas { display: block; }
+  #title {
+    position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    pointer-events: none; opacity: 0; color: #fff;
+  }
+  #title .main {
+    font-family: 'Inter Display', 'Inter', sans-serif; font-weight: 900;
+    font-size: calc(var(--h) * 0.15); letter-spacing: calc(var(--h) * 0.03);
+    background: linear-gradient(90deg, #8fe9ff 0%, #ffffff 48%, #ffd2a0 52%, #ff7a2e 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 0 calc(var(--h) * 0.012) rgba(160, 220, 255, 0.85)) drop-shadow(0 0 calc(var(--h) * 0.04) rgba(255, 120, 40, 0.5));
+    padding-left: calc(var(--h) * 0.03);
+  }
+  #title .sub {
+    font-family: 'WenQuanYi Zen Hei', sans-serif; font-weight: 700;
+    font-size: calc(var(--h) * 0.07); letter-spacing: calc(var(--h) * 0.07);
+    color: rgba(240, 244, 255, 1.0); margin-top: calc(var(--h) * 0.025);
+    text-shadow: 0 0 calc(var(--h) * 0.02) rgba(120, 200, 255, 0.9);
+    padding-left: calc(var(--h) * 0.06);
+  }
+  #title .line {
+    width: 0; height: 2px; margin-top: calc(var(--h) * 0.025);
+    background: linear-gradient(90deg, transparent, #9fe8ff, #fff, #ffa060, transparent);
+    box-shadow: 0 0 12px rgba(200, 230, 255, 0.9);
+  }
+</style>
+<script type="importmap">
+{ "imports": { "three": "/node_modules/three/build/three.module.js", "three/addons/": "/node_modules/three/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="title"><div class="main">SPIRIT CLASH</div><div class="line"></div><div class="sub">혼 의 격 돌</div></div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
