@@ -7,7 +7,7 @@ ffmpeg -y -hide_banner -loglevel warning \
   -framerate 30 -i frames/%04d.png \
   -i output/soundtrack.wav \
   -vf "pad=1920:1080:0:132:black,format=yuv420p" \
-  -c:v libx264 -preset slow -crf 16 -tune film -movflags +faststart \
+  -c:v libx264 -preset slow -crf 21 -tune film -movflags +faststart \
   -c:a aac -b:a 256k -shortest \
   output/spirit_clash.mp4
 echo "wrote output/spirit_clash.mp4"

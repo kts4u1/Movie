@@ -5,6 +5,8 @@
 
 **결과물:** [`output/spirit_clash.mp4`](output/spirit_clash.mp4) — 1920×1080, 30fps, 15초, 스테레오 사운드
 
+![불릿타임 장면](output/poster.jpg)
+
 ## 등장 캐릭터
 
 | | 푸른 무사 (Azure Ronin) | 화염 오니 (Crimson Oni) |
