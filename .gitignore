@@ -4,3 +4,4 @@ frames2d/
 *.wav
 !audio/*.py
 .DS_Store
+__pycache__/
