@@ -1,13 +1,18 @@
 {
   "name": "spirit-clash",
   "version": "1.0.0",
-  "description": "15-second procedural 3D fight cinematic rendered with three.js in headless Chromium",
+  "description": "Two 15-second procedural fight cinematics (3D three.js and 2D canvas) rendered in headless Chromium with synthesized audio",
   "scripts": {
     "events": "node tools/render.mjs --times 0 --out frames/_tmp --w 320 --h 136 --info audio/events.json",
     "audio": "python3 audio/soundtrack.py",
     "frames": "node tools/render.mjs --frames 0-449 --out frames --workers 2",
     "encode": "bash tools/encode.sh",
-    "build": "npm run events && npm run audio && npm run frames && npm run encode"
+    "build": "npm run events && npm run audio && npm run frames && npm run encode",
+    "events:2d": "node tools/render.mjs --nogl --page anime2d/index.html --times 0 --out frames2d/_tmp --w 320 --h 180 --info anime2d/events.json",
+    "audio:2d": "python3 anime2d/soundtrack.py",
+    "frames:2d": "node tools/render.mjs --nogl --page anime2d/index.html --frames 0-359 --fps 24 --h 1080 --out frames2d --workers 3",
+    "encode:2d": "bash tools/encode2d.sh",
+    "build:2d": "npm run events:2d && npm run audio:2d && npm run frames:2d && npm run encode:2d"
   },
   "repository": {
     "type": "git",

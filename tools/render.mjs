@@ -45,12 +45,13 @@ await new Promise((r) => server.listen(0, r));
 const port = server.address().port;
 
 async function worker(id, list) {
-  const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+  // the WebGL film needs the software GL backend; plain 2D-canvas pages render faster without it
+  const browser = await chromium.launch({ args: args.nogl ? [] : ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
   const page = await browser.newPage({ viewport: { width: W, height: H } });
   page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') console.log(`[w${id} ${m.type()}]`, m.text()); });
   page.on('pageerror', (e) => console.log(`[w${id} pageerror]`, e.message));
   const t0 = Date.now();
-  await page.goto(`http://localhost:${port}/src/index.html?w=${W}&h=${H}&dbg=${args.dbg || ""}`);
+  await page.goto(`http://localhost:${port}/${args.page || 'src/index.html'}?w=${W}&h=${H}&dbg=${args.dbg || ""}`);
   await page.waitForFunction(() => window.__ready === true, null, { timeout: 300000 });
   console.log(`[w${id}] ready in ${((Date.now() - t0) / 1000).toFixed(1)}s`);
   if (args.info) {
