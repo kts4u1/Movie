@@ -1,6 +1,7 @@
 node_modules/
 frames/
 frames2d/
+frames30/
 *.wav
 !audio/*.py
 .DS_Store

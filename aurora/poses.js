@@ -1,6 +1,6 @@
 // Pose library for both fighters. Angles: 0 = down, 90 = forward, 180 = up, -90 = back.
 // hip / feet are relative to the character's ground origin (y is negative upward).
-import { BASE_POSE } from './rig.js';
+import { BASE_POSE } from './skel2d.js';
 
 const P = (o) => ({ ...BASE_POSE, ...o });
 

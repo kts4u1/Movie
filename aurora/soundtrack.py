@@ -1,6 +1,6 @@
-"""Original score + sound effects for AURORA BLADE (30 s), synced to anime2d/events.json.
+"""Original score + sound effects for AURORA BLADE (30 s), synced to aurora/events.json.
 
-    python3 anime2d/soundtrack.py  ->  output/aurora_blade_30s.wav
+    python3 aurora/soundtrack.py  ->  output/aurora_blade_30s.wav
 """
 import json
 import os
