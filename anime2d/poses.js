@@ -24,6 +24,16 @@ export const H = {
   finish: P({ hip: [0, -0.5], lean: 38, bend: 6, head: -32, armF: [84, 92], sword: 89, armB: [-42, -72], footF: [0.62, 0], footB: [-0.62, 0], footAB: 55, turn: 0.4 }),
   rise: P({ hip: [0, -0.86], lean: 6, bend: 0, head: -4, armF: [42, 58], sword: 36, armB: [-10, 5], footF: [0.22, 0], footB: [-0.26, 0] }),
   chiburi: P({ hip: [0, -0.89], lean: 2, bend: 0, head: 0, armF: [22, 34], sword: 18, armB: [-8, 6], footF: [0.14, 0], footB: [-0.16, 0] }),
+  rest: P({ hip: [0, -0.9], lean: 2, bend: 0, head: 6, armF: [8, 30], sword: 55, armB: [-6, 6], footF: [0.12, 0], footB: [-0.14, 0], sheath: 1, grip: 0 }),
+  restGrip: P({ hip: [0, -0.89], lean: 4, bend: 0, head: -4, armF: [8, 30], sword: 55, armB: [-6, 6], footF: [0.14, 0], footB: [-0.16, 0], sheath: 1, grip: 1 }),
+  iai: P({ hip: [-0.02, -0.66], lean: 26, bend: 6, head: -24, armF: [8, 30], sword: 55, armB: [-6, 6], footF: [0.5, 0], footB: [-0.48, 0], footAB: 30, sheath: 1, grip: 1, turn: -0.3 }),
+  kneel: P({ hip: [-0.05, -0.5], lean: 34, bend: 18, head: 40, armF: [62, 30], sword: 4, armB: [36, 30], footF: [0.32, 0], footB: [-0.36, -0.02], footAB: 70, footAF: 0, turn: 0.2 }),
+  high: P({ hip: [0, -0.82], lean: -2, bend: -4, head: -6, armF: [170, 178], sword: 180, two: 1, footF: [0.42, 0], footB: [-0.42, 0], footAB: 20 }),
+  fall: P({ hip: [0, -0.8], lean: -40, bend: -20, head: 30, armF: [140, 110], sword: 60, armB: [-150, -120], footF: [0.35, -0.3], footB: [-0.1, -0.4], footAF: 40, footAB: 70 }),
+  land: P({ hip: [0, -0.5], lean: 30, bend: 10, head: -20, armF: [60, 92], sword: 110, armB: [30, 60], footF: [0.5, 0], footB: [-0.5, 0], footAB: 50 }),
+  sheatheA: P({ hip: [0, -0.86], lean: 4, bend: 0, head: -4, armF: [60, 70], sword: 0, armB: [-6, 6], footF: [0.18, 0], footB: [-0.2, 0], sheathing: 0.999 }),
+  sheatheB: P({ hip: [0, -0.88], lean: 2, bend: 0, head: -10, armF: [60, 70], sword: 0, armB: [-6, 6], footF: [0.16, 0], footB: [-0.18, 0], sheathing: 0.002 }),
+  sheathed: P({ hip: [0, -0.89], lean: 2, bend: -1, head: -22, armF: [8, 30], sword: 55, armB: [-6, 6], footF: [0.14, 0], footB: [-0.16, 0], sheath: 1, grip: 1 }),
   lookup: P({ hip: [0, -0.9], lean: 0, bend: -3, head: -24, armF: [6, 14], sword: 8, armB: [-6, 4], footF: [0.1, 0], footB: [-0.12, 0] }),
 };
 
@@ -42,6 +52,12 @@ export const R = {
   slam: P({ hip: [0.16, -0.56], lean: 42, bend: 14, head: -44, armF: [50, 56], sword: 36, two: 1, footF: [0.56, 0], footB: [-0.5, 0], footAB: 45 }),
   guardUp: P({ hip: [0, -0.82], lean: -8, bend: -8, head: -18, armF: [104, 142], sword: 166, two: 1, footF: [0.3, 0], footB: [-0.34, 0] }),
   struck: P({ hip: [0.04, -0.82], lean: 8, bend: 2, head: -6, armF: [112, 124], sword: 132, armB: [-20, -30], footF: [0.34, 0], footB: [-0.32, 0] }),
+  cast: P({ hip: [0.05, -0.78], lean: 14, bend: 6, head: -10, armF: [80, 92], sword: 92, armB: [-60, -110], footF: [0.42, 0], footB: [-0.4, 0], footAB: 20 }),
+  laugh: P({ hip: [0, -0.9], lean: -6, bend: -10, head: -22, armF: [22, 160], sword: 218, armB: [-30, -70], footF: [0.16, 0], footB: [-0.18, 0] }),
+  air: P({ hip: [0, -0.8], lean: 10, bend: -6, head: -10, armF: [168, 196], sword: 214, two: 1, footF: [0.3, -0.3], footB: [-0.36, -0.08], footAF: 30, footAB: 55 }),
+  walkA: P({ hip: [0, -0.88], lean: 8, bend: 2, head: 4, armF: [-20, -40], sword: -70, armB: [10, 20], footF: [0.28, 0], footB: [-0.26, -0.03], footAB: 20 }),
+  walkB: P({ hip: [0, -0.9], lean: 8, bend: 2, head: 4, armF: [-18, -36], sword: -68, armB: [6, 16], footF: [0.05, -0.08], footB: [0.02, 0], footAF: 15 }),
+  dragon: P({ hip: [0, -0.62], lean: 38, bend: 8, head: -30, armF: [-60, -95], sword: -105, armB: [-40, -70], footF: [0.55, 0], footB: [-0.55, -0.1], footAB: 50 }),
   kneel: P({ hip: [0, -0.44], lean: 22, bend: 20, head: 28, armF: [12, 22], sword: 24, armB: [4, 12], footF: [0.3, 0], footB: [-0.38, 0], footAB: 62 }),
 };
 
@@ -53,5 +69,8 @@ export function lerpPose(a, b, u) {
     else o[k] = x + (y - x) * u;
   }
   o.two = u < 0.5 ? a.two : b.two;
+  o.sheath = u < 0.5 ? a.sheath : b.sheath;
+  o.grip = u < 0.5 ? a.grip : b.grip;
+  if (a.sheathing < 0 || b.sheathing < 0) o.sheathing = u < 0.5 ? a.sheathing : b.sheathing;
   return o;
 }

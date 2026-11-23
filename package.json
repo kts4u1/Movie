@@ -10,7 +10,7 @@
     "build": "npm run events && npm run audio && npm run frames && npm run encode",
     "events:2d": "node tools/render.mjs --nogl --page anime2d/index.html --times 0 --out frames2d/_tmp --w 320 --h 180 --info anime2d/events.json",
     "audio:2d": "python3 anime2d/soundtrack.py",
-    "frames:2d": "node tools/render.mjs --nogl --page anime2d/index.html --frames 0-359 --fps 24 --h 1080 --out frames2d --workers 3",
+    "frames:2d": "node tools/render.mjs --nogl --page anime2d/index.html --frames 0-719 --fps 24 --h 1080 --out frames2d --workers 3",
     "encode:2d": "bash tools/encode2d.sh",
     "build:2d": "npm run events:2d && npm run audio:2d && npm run frames:2d && npm run encode:2d"
   },

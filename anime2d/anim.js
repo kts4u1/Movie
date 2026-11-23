@@ -21,14 +21,14 @@ export function poseTrack(keys, hold = 1) {
 }
 // keys: [{t, x, y?, f?, rot?, sx?, wind?, dur?, e?}]
 export function rootTrack(keys) {
-  const num = ['x', 'y', 'rot', 'wind'];
+  const num = ['x', 'y', 'rot', 'wind', 'lift'];
   const full = keys.map((k, i) => ({ y: 0, rot: 0, ...k }));
-  for (let i = 1; i < full.length; i++) { if (full[i].f == null) full[i].f = full[i - 1].f; if (keys[i].wind == null) full[i].wind = full[i - 1].wind; if (keys[i].y == null) full[i].y = full[i - 1].y; if (keys[i].rot == null) full[i].rot = full[i - 1].rot; }
+  for (let i = 1; i < full.length; i++) { if (full[i].f == null) full[i].f = full[i - 1].f; if (keys[i].wind == null) full[i].wind = full[i - 1].wind; if (keys[i].y == null) full[i].y = full[i - 1].y; if (keys[i].rot == null) full[i].rot = full[i - 1].rot; if (keys[i].lift == null) full[i].lift = full[i - 1].lift ?? 0; }
   return (t) => {
     let i = 0;
     while (i < full.length - 1 && full[i + 1].t <= t) i++;
     const a = full[i], b = full[i + 1];
-    const o = { x: a.x, y: a.y, rot: a.rot, wind: a.wind ?? 0.6, facing: a.f ?? 1 };
+    const o = { x: a.x, y: a.y, rot: a.rot, wind: a.wind ?? 0.6, lift: a.lift ?? 0, facing: a.f ?? 1 };
     if (b && t > a.t) {
       const start = Math.max(b.t - (b.dur ?? (b.t - a.t)), a.t);
       if (t > start) { const u = (ease[b.e || 'inout'])((t - start) / (b.t - start)); for (const k of num) o[k] = lerp(a[k] ?? 0, b[k] ?? 0, u); }
